@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 
 // Firebase web app's configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCsPPcBfv2REFrz5V2plUK_2a6KmUrRnns",
-  authDomain: "taploom-shopping-cart.firebaseapp.com",
-  projectId: "taploom-shopping-cart",
-  storageBucket: "taploom-shopping-cart.firebasestorage.app",
-  messagingSenderId: "308703636953",
-  appId: "1:308703636953:web:4cd3af7bbc53b2efa33dc8"
+  apiKey: "<FIREBASE_PROJECT_API_KEY>",
+  authDomain: "FIREBASE_PROJECT_AUTH_DOMAIN",
+  projectId: "<FIREBASE_PROJECT_ID>",
+  storageBucket: "FIREBASE_PROJECT_STORAGE_BUCKET",
+  messagingSenderId: "<FIREBASE_PROJECT_MESSAGING_SENDER_ID>",
+  appId: "<FIREBASE_PROJECT_APP_ID>"
 };
 
 const app = initializeApp(firebaseConfig);
