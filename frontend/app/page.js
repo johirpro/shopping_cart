@@ -16,7 +16,16 @@ export default function Home() {
 
   return (
     <div>
-      {!token && <a href="/login">Login to purchase</a>}
+      <div style={{ padding: "10px" }}>
+        {!token ? (
+          <a href="/login">Login to purchase</a>
+        ) : (
+          <>
+            <a href="/cart" style={{ marginRight: "10px" }}>Go to Cart</a>
+            <a href="/logout">Logout</a>
+          </>
+        )}
+      </div>
 
       <div style={{ display: "flex", gap: "20px" }}>
         {products?.map((p) => (
@@ -24,7 +33,7 @@ export default function Home() {
             <img src={p.image_url} width={120} />
 
             <h3>{p.name}</h3>
-            <p>Price: ${p.price}</p>
+            <p>Price: {p.price} BDT</p>
             <p>Stock: {p.stock}</p>
 
             {token && (

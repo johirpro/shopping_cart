@@ -181,7 +181,7 @@ Clone the git repo:
 > php artisan migrate
 >
 # run seeder to insert product:
-> 
+> php artisan db:seed --class=ProductSeeder
 ```
 
 **Install Next.js and dependencies**

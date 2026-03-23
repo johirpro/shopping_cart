@@ -49,11 +49,11 @@ export default function CartPage() {
           >
             <h3>{item.product?.name}</h3>
 
-            <p>Price: ${price.toFixed(2)}</p>
+            <p>Price: {price.toFixed(2)} BDT</p>
 
             <p>Quantity: {item.quantity}</p>
             <p>
-              Total Price: ${total.toFixed(2)}
+              Total Price: {total.toFixed(2)} BDT
             </p>
 
             <div style={{ display: "flex", gap: 10 }}>
@@ -83,13 +83,13 @@ export default function CartPage() {
       })}
 
       <h2>
-        Grand Total: $
-        {data.items
+        Grand Total:&nbsp;
+         {data.items
           .reduce((sum, item) => {
             const price = Number(item.product?.price || 0);
             return sum + item.quantity * price;
           }, 0)
-          .toFixed(2)}
+          .toFixed(2)} BDT
       </h2>
     </div>
   );
