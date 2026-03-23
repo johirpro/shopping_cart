@@ -1,12 +1,27 @@
 "use client";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useSyncMutation, useGetProductsQuery } from "@/store/cartApi";
+import { logout } from "@/store/authSlice";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 export default function Home() {
   const token = useSelector((state) => state.auth?.token);
   const { data: products, isLoading } = useGetProductsQuery();
   const [sync] = useSyncMutation();
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    Cookies.remove("token");
+
+    dispatch(logout());
+
+    router.push("/login");
+  };
 
   const handleAction = async (id, type) => {
     await sync([{ type, product_id: id }]);
@@ -21,8 +36,11 @@ export default function Home() {
           <a href="/login">Login to purchase</a>
         ) : (
           <>
-            <a href="/cart" style={{ marginRight: "10px" }}>Go to Cart</a>
-            <a href="/logout">Logout</a>
+            <a href="/cart" style={{ marginRight: "10px" }}>
+              Go to Cart
+            </a>
+
+            <button onClick={handleLogout}>Logout</button>
           </>
         )}
       </div>
@@ -38,7 +56,9 @@ export default function Home() {
 
             {token && (
               <div>
-                <button onClick={() => handleAction(p.id, "add")}>Add</button>
+                <button onClick={() => handleAction(p.id, "add")}>
+                  Add
+                </button>
               </div>
             )}
           </div>
