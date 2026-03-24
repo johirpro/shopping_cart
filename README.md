@@ -205,5 +205,5 @@ Clone the git repo:
 - Use `+` to add quantity and `-` to decrease quantity.
 
 ## Known Issue
-- Add `cart` link to browse cart page using a just a click instead of write url manually on the browser's address bar.
-- When logged-in user browse the `http://localhost:3000/login` then redirect to the home page.
+[x] Add cart menu link (#1)
+[x] Apply redirect on Login page for logged-in user (#2)
