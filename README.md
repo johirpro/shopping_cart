@@ -6,6 +6,7 @@
 - PHP 8
 - MySQL 8
 - Laravel 11
+- Firebase Auth
 - Next.js
 
 <details>
