@@ -205,5 +205,8 @@ Clone the git repo:
 - Use `+` to add quantity and `-` to decrease quantity.
 
 ## Known Issue
-- [x] Add cart menu link Closes #1
-- [x] Apply redirect on Login page for logged-in user #2
+- [x] Add cart menu link Closes (#1)
+- [x] Apply redirect on Login page for logged-in user (#2)
+
+- Add cart menu link Closes (#1)
+- Apply redirect on Login page for logged-in user (#2)
